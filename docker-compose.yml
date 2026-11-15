@@ -1,0 +1,83 @@
+x-app: &app
+  build: .
+  environment:
+    PG_DSN: postgresql://app:app@postgres:5432/inventory
+    REDIS_URL: redis://redis:6379/0
+    KAFKA: kafka:9092
+    TOPIC: item-updates
+    LAG_MS: "20"
+    GATEWAY: http://gateway:8000
+    LOGDIR: /logs
+  volumes:
+    - ./logs:/logs
+
+services:
+  kafka:
+    image: apache/kafka:3.8.1
+    hostname: kafka
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_HEAP_OPTS: "-Xms512m -Xmx768m"
+    ports: ["9092:9092"]
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server kafka:9092 --list >/dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+
+  postgres:
+    image: postgres:16-alpine
+    environment: {POSTGRES_USER: app, POSTGRES_PASSWORD: app, POSTGRES_DB: inventory}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    ports: ["5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U app -d inventory"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  redis:
+    image: redis:7-alpine
+    command: redis-server --appendonly yes
+    volumes: [redisdata:/data]
+    ports: ["6379:6379"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+
+  gateway:
+    <<: *app
+    command: uvicorn app.gateway:app --host 0.0.0.0 --port 8000 --log-level warning
+    ports: ["8000:8000"]
+    depends_on:
+      kafka: {condition: service_healthy}
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+
+  projector:
+    <<: *app
+    command: python -m app.projector
+    depends_on:
+      kafka: {condition: service_healthy}
+      redis: {condition: service_healthy}
+
+  tools:
+    <<: *app
+    profiles: ["tools"]
+    command: sleep infinity
+
+volumes:
+  pgdata: {}
+  redisdata: {}

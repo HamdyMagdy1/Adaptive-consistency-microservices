@@ -1,0 +1,112 @@
+nohup: ignoring input
+ Container adaptive-consistency-microservices-tools-run-213edc636a37 Creating 
+ Container adaptive-consistency-microservices-tools-run-213edc636a37 Created 
+done ev_S_s1 48000 requests
+ Container adaptive-consistency-microservices-tools-run-1eb2c4116d78 Creating 
+ Container adaptive-consistency-microservices-tools-run-1eb2c4116d78 Created 
+done ev_A1_s1 48000 requests
+ Container adaptive-consistency-microservices-tools-run-aeea565c1f57 Creating 
+ Container adaptive-consistency-microservices-tools-run-aeea565c1f57 Created 
+done ev_H5_s1 48000 requests
+ Container adaptive-consistency-microservices-tools-run-f7b8abd2099f Creating 
+ Container adaptive-consistency-microservices-tools-run-f7b8abd2099f Created 
+done ev_E_s1 48000 requests
+ Container adaptive-consistency-microservices-tools-run-f59a2387c6a7 Creating 
+ Container adaptive-consistency-microservices-tools-run-f59a2387c6a7 Created 
+done ev_A5_s1 48000 requests
+ Container adaptive-consistency-microservices-tools-run-22b5a9d88268 Creating 
+ Container adaptive-consistency-microservices-tools-run-22b5a9d88268 Created 
+done ev_H1_s1 48000 requests
+ Container adaptive-consistency-microservices-tools-run-7972644ef976 Creating 
+ Container adaptive-consistency-microservices-tools-run-7972644ef976 Created 
+done ev_H1_s2 48000 requests
+ Container adaptive-consistency-microservices-tools-run-3d7401ad4fcd Creating 
+ Container adaptive-consistency-microservices-tools-run-3d7401ad4fcd Created 
+done ev_A1_s2 48000 requests
+ Container adaptive-consistency-microservices-tools-run-79ca5d10e4da Creating 
+ Container adaptive-consistency-microservices-tools-run-79ca5d10e4da Created 
+done ev_H5_s2 48000 requests
+ Container adaptive-consistency-microservices-tools-run-ba761567476c Creating 
+ Container adaptive-consistency-microservices-tools-run-ba761567476c Created 
+done ev_S_s2 48000 requests
+ Container adaptive-consistency-microservices-tools-run-a0f6fbf70250 Creating 
+ Container adaptive-consistency-microservices-tools-run-a0f6fbf70250 Created 
+done ev_A5_s2 48000 requests
+ Container adaptive-consistency-microservices-tools-run-2be3de5bdb4a Creating 
+ Container adaptive-consistency-microservices-tools-run-2be3de5bdb4a Created 
+done ev_E_s2 48000 requests
+ Container adaptive-consistency-microservices-tools-run-36af40536c8d Creating 
+ Container adaptive-consistency-microservices-tools-run-36af40536c8d Created 
+done ev_H5_s3 48000 requests
+ Container adaptive-consistency-microservices-tools-run-a91999712007 Creating 
+ Container adaptive-consistency-microservices-tools-run-a91999712007 Created 
+done ev_A1_s3 48000 requests
+ Container adaptive-consistency-microservices-tools-run-c56a42894a3a Creating 
+ Container adaptive-consistency-microservices-tools-run-c56a42894a3a Created 
+done ev_E_s3 48000 requests
+ Container adaptive-consistency-microservices-tools-run-9116fc1132c2 Creating 
+ Container adaptive-consistency-microservices-tools-run-9116fc1132c2 Created 
+done ev_S_s3 48000 requests
+ Container adaptive-consistency-microservices-tools-run-70ab7cbf562b Creating 
+ Container adaptive-consistency-microservices-tools-run-70ab7cbf562b Created 
+done ev_A5_s3 48000 requests
+ Container adaptive-consistency-microservices-tools-run-5e82240a6fdf Creating 
+ Container adaptive-consistency-microservices-tools-run-5e82240a6fdf Created 
+done ev_H1_s3 48000 requests
+ Container adaptive-consistency-microservices-tools-run-b63c8d6ae879 Creating 
+ Container adaptive-consistency-microservices-tools-run-b63c8d6ae879 Created 
+     run mode  rate  reads  incons_pct  incons_crit_pct  mean_versions_behind  s_share_pct  p50_ms  p95_ms  p99_ms  throughput_rps  errors
+ ev_S_s1    S 400.0  37020       0.000            0.000                 0.000      100.000   2.914  52.765 130.455         399.131       0
+ev_A1_s1    A 400.0  37020       0.802            0.664                 0.018       25.367   2.279  30.123  84.012         399.116       0
+ev_H5_s1    H 400.0  37022       2.966            1.301                 0.065       34.269   2.116  22.910  66.452         399.122       0
+ ev_E_s1    E 400.0  36997      24.132           23.919                 1.383        0.000   1.808  24.928 269.509         398.903      26
+ev_A5_s1    A 400.0  37020       2.423            1.655                 0.049       22.615   2.221  33.097  92.377         399.129       0
+ev_H1_s1    H 400.0  37020       0.457            0.409                 0.006       42.898   2.170  30.475  88.930         399.121       0
+ev_H1_s2    H 400.0  36842       0.535            0.645                 0.007       42.791   2.265  29.316  86.709         400.483       0
+ev_A1_s2    A 400.0  36842       0.877            0.681                 0.019       25.466   2.190  26.243  82.314         400.481       0
+ev_H5_s2    H 400.0  36842       3.010            1.487                 0.059       34.121   2.173  31.251 129.623         400.483       0
+ ev_S_s2    S 400.0  36842       0.000            0.000                 0.000      100.000   2.786  74.928 209.328         400.484       0
+ev_A5_s2    A 400.0  36842       2.592            2.078                 0.049       22.311   2.160  28.522 120.727         400.484       0
+ ev_E_s2    E 400.0  36842      24.347           24.503                 1.476        0.000   1.882  18.126  96.483         400.483       0
+ev_H5_s3    H 400.0  36944       3.232            1.480                 0.072       33.867   2.147  27.811  81.949         402.762       0
+ev_A1_s3    A 400.0  36949       1.050            0.808                 0.021       25.738   2.241  37.526 181.734         402.762       0
+ ev_E_s3    E 400.0  36944      24.629           24.330                 1.406        0.000   1.848  17.952  58.553         402.763       0
+ ev_S_s3    S 400.0  36944       0.000            0.000                 0.000      100.000   2.571  42.356  95.753         402.761       0
+ev_A5_s3    A 400.0  36944       2.829            2.034                 0.056       22.453   2.228  35.381 112.630         402.762       0
+ev_H1_s3    H 400.0  36944       0.568            0.554                 0.009       42.351   2.195  30.651 106.481         402.763       0
+ Container adaptive-consistency-microservices-tools-run-4ec92cc80594 Creating 
+ Container adaptive-consistency-microservices-tools-run-4ec92cc80594 Created 
+
+== inconsistency % per 10s window ==
+     ev_E_s1  ev_S_s1  ev_H1_s1  ev_H5_s1  ev_A1_s1  ev_A5_s1
+w                                                            
+0        6.1      0.0       0.0       0.0       0.4       2.7
+10       5.6      0.0       0.0       0.0       0.2       2.1
+20      38.5      0.0       0.0       6.0       3.6       6.7
+30      43.4      0.0       0.0       7.1       0.0       3.0
+40      22.7      0.0       0.0       4.7       0.2       1.9
+50       3.6      0.0       0.0       0.0       0.1       0.8
+60      29.1      0.0       0.0       0.0       1.5       1.5
+70      29.4      0.0       0.0       0.0       0.0       0.0
+80      29.0      0.0       0.0       0.0       0.0       0.0
+90      44.5      0.0       3.7      10.6       2.9       7.1
+100     26.1      0.0       1.6       5.9       0.6       2.8
+110      3.5      0.0       0.0       0.0       0.2       1.0
+120      1.7      0.0       0.0       0.0       0.0       0.0
+
+== p95 read latency (ms) per 10s window ==
+     ev_E_s1  ev_S_s1  ev_H1_s1  ev_H5_s1  ev_A1_s1  ev_A5_s1
+w                                                            
+0       17.0    150.0      21.0      25.0      81.0      53.0
+10      22.0     27.0      12.0      40.0      34.0      28.0
+20      27.0     51.0      32.0      17.0      16.0      11.0
+30       7.0     59.0      67.0      48.0      43.0      44.0
+40     393.0     37.0      28.0      19.0      46.0      43.0
+50      12.0     57.0      16.0      14.0      22.0      51.0
+60      15.0    101.0      44.0      25.0      15.0      10.0
+70       7.0     21.0      29.0      57.0      76.0      27.0
+80      34.0    107.0      26.0      12.0      13.0      92.0
+90      16.0     88.0      10.0      13.0      19.0      40.0
+100     48.0     42.0      37.0      16.0      35.0      27.0
+110     10.0     15.0      23.0      18.0      39.0      60.0
+120     10.0     38.0       4.0       5.0       6.0       6.0
